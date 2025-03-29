@@ -216,69 +216,62 @@
     <button class="search-button">Search</button>
   </div>
 
-  <!-- Category Dropdown Navigation -->
+<!-- Mobile-Friendly Dropdown Category Menu -->
 <style>
-  .dropdown-nav {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
+  .mobile-dropdown {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
   }
 
-  .dropdown {
-    position: relative;
-  }
-
-  .dropdown > a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 10px 15px;
-    display: block;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 40px;
-    left: 0;
+  .category-block {
     background-color: #111;
-    padding: 15px 20px;
-    border-radius: 4px;
-    z-index: 999;
-    min-width: 200px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    overflow: hidden;
   }
 
-  .dropdown-content a {
+  .category-header {
+    padding: 15px 20px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+  }
+
+  .category-header:hover {
+    background-color: #222;
+  }
+
+  .subcategory-list {
+    display: none;
+    padding: 0 20px 15px;
+    background-color: #1a1a1a;
+  }
+
+  .subcategory-list a {
     display: block;
-    color: #ddd;
     padding: 8px 0;
+    color: #ccc;
     text-decoration: none;
     font-size: 14px;
   }
 
-  .dropdown-content a:hover {
+  .subcategory-list a:hover {
     color: #fff;
   }
 
-  .dropdown:hover .dropdown-content {
+  .category-block.active .subcategory-list {
     display: block;
-  }
-
-  @media (max-width: 768px) {
-    .dropdown-content {
-      position: static;
-    }
   }
 </style>
 
-<nav class="dropdown-nav">
-  <div class="dropdown">
-    <a href="#">Food & Beverage</a>
-    <div class="dropdown-content">
+<div class="mobile-dropdown">
+
+  <div class="category-block">
+    <div class="category-header">Food & Beverage</div>
+    <div class="subcategory-list">
       <a href="#">Snacks & Treats</a>
       <a href="#">Pantry Essentials</a>
       <a href="#">Drinks & Beverages</a>
@@ -286,9 +279,9 @@
     </div>
   </div>
 
-  <div class="dropdown">
-    <a href="#">Home & Tech</a>
-    <div class="dropdown-content">
+  <div class="category-block">
+    <div class="category-header">Home & Tech</div>
+    <div class="subcategory-list">
       <a href="#">Smart Home & Living</a>
       <a href="#">Kitchen & Dining Essentials</a>
       <a href="#">Home Décor & Accessories</a>
@@ -301,42 +294,52 @@
     </div>
   </div>
 
-  <div class="dropdown">
-    <a href="#">Hobbies & Collectibles</a>
-    <div class="dropdown-content">
+  <div class="category-block">
+    <div class="category-header">Hobbies & Collectibles</div>
+    <div class="subcategory-list">
       <a href="#">Anime & Manga Merchandise</a>
       <a href="#">Models & Figures</a>
-      <a href="#">Trading Cards</a>
-      <a href="#">Limited Editions</a>
+      <a href="#">Trading Cards & Accessories</a>
+      <a href="#">Limited Editions & Exclusives</a>
     </div>
   </div>
 
-  <div class="dropdown">
-    <a href="#">Fashion</a>
-    <div class="dropdown-content">
+  <div class="category-block">
+    <div class="category-header">Fashion</div>
+    <div class="subcategory-list">
       <a href="#">Clothing</a>
       <a href="#">Footwear</a>
-      <a href="#">Bags & Travel</a>
+      <a href="#">Bags & Travel Essentials</a>
       <a href="#">Jewelry</a>
       <a href="#">Watches</a>
       <a href="#">Fashion Accessories</a>
-      <a href="#">Traditional Wear</a>
+      <a href="#">Cultural & Traditional Wear</a>
     </div>
   </div>
 
-  <div class="dropdown">
-    <a href="#">Beauty & Personal Care</a>
-    <div class="dropdown-content">
+  <div class="category-block">
+    <div class="category-header">Beauty & Personal Care</div>
+    <div class="subcategory-list">
       <a href="#">Skincare</a>
-      <a href="#">Makeup</a>
-      <a href="#">Haircare</a>
+      <a href="#">Makeup & Cosmetics</a>
+      <a href="#">Haircare Essentials</a>
       <a href="#">Health & Supplements</a>
-      <a href="#">Bath & Body</a>
+      <a href="#">Bath & Body Products</a>
       <a href="#">Men’s Grooming</a>
       <a href="#">Wellness Essentials</a>
     </div>
   </div>
-</nav>
+
+</div>
+
+<script>
+  document.querySelectorAll('.category-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const block = header.parentElement;
+      block.classList.toggle('active');
+    });
+  });
+</script>
 
   <!-- Tagline -->
   <section>
