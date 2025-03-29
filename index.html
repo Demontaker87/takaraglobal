@@ -1,60 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Takara Global</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAKARA GLOBAL</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* Import the Tactico font */
+    @font-face {
+      font-family: 'Tactico';
+      src: url('https://yourdomain.com/fonts/Tactico-Regular.woff2') format('woff2'),
+           url('https://yourdomain.com/fonts/Tactico-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background: #000;
+      background-color: #000;
       color: #fff;
       font-family: 'Helvetica Neue', sans-serif;
       line-height: 1.6;
+      padding: 20px;
+    }
+
+    /* Header styles */
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-family: 'Tactico', sans-serif;
+      font-size: 48px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    /* Search bar styles */
+    .search-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    .search-input {
+      width: 60%;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .search-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: #fff;
+      color: #000;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    /* Navigation styles */
+    nav {
+      text-align: center;
+      margin-bottom: 40px;
     }
 
     nav a {
-      color: #ffffff !important;
+      color: #fff;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 18px;
     }
 
     nav a:hover {
-      color: #ffffff !important;
       text-decoration: underline;
     }
 
-    h1 {
-      font-size: 32px;
-      letter-spacing: 2px;
-      font-weight: bold;
-    }
-
+    /* Section styles */
     section {
-      padding: 60px 20px;
-      text-align: center;
-      max-width: 1200px;
-      margin: auto;
+      margin-bottom: 60px;
     }
 
     section h2 {
       font-size: 36px;
       margin-bottom: 20px;
-      color: #ffffff !important;
+      text-align: center;
     }
 
     section p {
-      color: #bbb;
       font-size: 18px;
+      color: #bbb;
+      text-align: center;
+      margin-bottom: 40px;
     }
 
+    /* Grid styles */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
     .tile {
@@ -62,7 +117,7 @@
       color: #000;
       border-radius: 6px;
       overflow: hidden;
-      box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
       text-align: left;
     }
 
@@ -78,11 +133,11 @@
 
     .tile h3 {
       margin-bottom: 10px;
-      font-size: 18px;
+      font-size: 22px;
     }
 
     .tile p {
-      font-size: 14px;
+      font-size: 16px;
       color: #333;
       margin-bottom: 15px;
     }
@@ -94,20 +149,20 @@
       background-color: #000;
       color: #fff;
       cursor: pointer;
+      border-radius: 4px;
     }
 
     .tile a button:hover {
       background-color: #222;
     }
 
+    /* Form styles */
     form {
-      margin-top: 30px;
+      max-width: 600px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
+      gap: 20px;
     }
 
     input, textarea {
@@ -119,158 +174,74 @@
 
     button {
       padding: 15px;
-      background-color: #ffffff;
+      background-color: #fff;
       border: none;
-      color: #000000;
+      color: #000;
       font-weight: bold;
       cursor: pointer;
+      border-radius: 4px;
     }
 
+    /* Footer styles */
     footer {
-      padding: 30px;
+      padding: 20px;
       text-align: center;
       background-color: #111;
       color: #444;
       font-size: 14px;
+      margin-top: 40px;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 24px;
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .search-input {
+        width: 80%;
       }
 
       nav a {
         display: block;
         margin: 10px 0;
       }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Brand Title + Nav -->
-  <div style="background-color: #111; padding: 40px 20px 20px; text-align: center;">
+  <!-- Header -->
+  <div class="header">
     <h1>TAKARA GLOBAL</h1>
-    <nav style="margin-top: 20px;">
-      <a href="#marketplace">Marketplace</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </div>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" class="search-input" placeholder="Search...">
+    <button class="search-button">Search</button>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#marketplace">Marketplace</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <!-- Tagline -->
-  <div style="text-align: center; padding: 40px 20px 0;">
-    <p style="color: #aaa; font-size: 20px; max-width: 700px; margin: 0 auto;">
-      We help you buy exclusive products from Japan, Korea, and the U.S.—even if they don’t ship to your country.
-    </p>
-  </div>
+  <section>
+    <p>We help you buy exclusive products from Japan, Korea, and the U.S.—even if they don’t ship to your country.</p>
+  </section>
 
-  <!-- Marketplace -->
-  <section id="marketplace" style="padding-top: 40px;">
+  <!-- Marketplace Section -->
+  <section id="marketplace">
     <h2>Explore Our Curated Picks</h2>
     <p>Carefully selected categories from our most requested orders worldwide:</p>
-
     <div class="grid">
-
+      <!-- Tile 1 -->
       <div class="tile">
         <img src="https://via.placeholder.com/400x250?text=Japanese+Tech" alt="Japanese Tech">
-        <div class="tile-content">
-          <h3>Japanese Tech</h3>
-          <p>Top gadgets & tools you can’t get outside Japan — we make it happen.</p>
-          <a href="#contact"><button>Request This</button></a>
-        </div>
-      </div>
-
-      <div class="tile">
-        <img src="https://via.placeholder.com/400x250?text=Korean+Skincare" alt="Korean Skincare">
-        <div class="tile-content">
-          <h3>Korean Skincare</h3>
-          <p>From Seoul shelves to your skin. Tell us what you want.</p>
-          <a href="#contact"><button>Request This</button></a>
-        </div>
-      </div>
-
-      <div class="tile">
-        <img src="https://via.placeholder.com/400x250?text=Manga+Picks" alt="Manga Picks">
-        <div class="tile-content">
-          <h3>Manga Picks</h3>
-          <p>Special editions, Japanese-only prints — we get them for you.</p>
-          <a href="#contact"><button>Request This</button></a>
-        </div>
-      </div>
-
-      <div class="tile">
-        <img src="https://via.placeholder.com/400x250?text=Streetwear+Drops" alt="Streetwear Drops">
-        <div class="tile-content">
-          <h3>Streetwear Drops</h3>
-          <p>Rare collabs, exclusive drops. Takara sources what others can’t.</p>
-          <a href="#contact"><button>Request This</button></a>
-        </div>
-      </div>
-
-      <div class="tile">
-        <img src="https://via.placeholder.com/400x250?text=Premium+Snacks" alt="Premium Snacks">
-        <div class="tile-content">
-          <h3>Premium Snacks</h3>
-          <p>From matcha treats to wagyu jerky. Snack like it’s Tokyo.</p>
-          <a href="#contact"><button>Request This</button></a>
-        </div>
-      </div>
-
-      <div class="tile">
-        <img src="https://via.placeholder.com/400x250?text=Collectors+Zone" alt="Collectors Zone">
-        <div class="tile-content">
-          <h3>Collector's Zone</h3>
-          <p>Anime figures, limited vinyls, artbooks. We’ll track them down.</p>
-          <a href="#contact"><button>Request This</button></a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials">
-    <h2>What Our Customers Say</h2>
-    <p>Real words from shoppers around the world who use Takara Global to access what they can't get locally.</p>
-
-    <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
-
-      <div style="background-color: #111; padding: 20px; border-left: 4px solid #00ffcc;">
-        <p style="font-style: italic; color: #ccc;">"I finally got my hands on limited edition sneakers from Japan. Takara handled everything—smooth, fast, reliable."</p>
-        <p style="margin-top: 10px; color: #888;">— Mike J., USA</p>
-      </div>
-
-      <div style="background-color: #111; padding: 20px; border-left: 4px solid #00ffcc;">
-        <p style="font-style: italic; color: #ccc;">"Was able to order skincare products from Korea that don't ship here. They even sent tracking updates. Game changer."</p>
-        <p style="margin-top: 10px; color: #888;">— Sarah L., UAE</p>
-      </div>
-
-      <div style="background-color: #111; padding: 20px; border-left: 4px solid #00ffcc;">
-        <p style="font-style: italic; color: #ccc;">"Excellent communication and fast delivery. Takara Global helped me buy tech gear from the U.S. with zero hassle."</p>
-        <p style="margin-top: 10px; color: #888;">— Ethan R., Singapore</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Looking for something specific? Let us know and we’ll help source it for you.</p>
-    
-    <form action="https://formspree.io/f/YOUR_FORM_ENDPOINT" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="_replyto" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="What would you like to order?" required></textarea>
-      <button type="submit">Send Request</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 TAKARA GLOBAL | Your Worldwide Shopping Partner.
-  </footer>
-
-</body>
-</html>
+       
+::contentReference[oaicite:7]{index=7}
+ 
