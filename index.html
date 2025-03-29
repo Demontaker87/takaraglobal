@@ -23,22 +23,21 @@
     }
 
     nav a {
-      color: #ffffff;
+      color: #ffffff !important;
       margin: 0 20px;
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
     }
 
-nav a:hover {
-  color: #ffffff !important;
-  text-decoration: underline;
-}
+    nav a:hover {
+      color: #ffffff !important;
+      text-decoration: underline;
+    }
 
     header {
       padding: 120px 20px 80px;
       text-align: center;
-      background-color: #000;
     }
 
     header h1 {
@@ -72,6 +71,23 @@ nav a:hover {
       font-size: 18px;
     }
 
+    #marketplace {
+      max-width: 1200px;
+    }
+
+    #marketplace button {
+      background-color: #ffffff;
+      color: #000000;
+      padding: 10px 20px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #marketplace button:hover {
+      background-color: #eeeeee;
+    }
+
     form {
       margin-top: 30px;
       display: flex;
@@ -89,14 +105,14 @@ nav a:hover {
       font-size: 16px;
     }
 
-   button {
-  padding: 15px;
-  background-color: #ffffff;
-  border: none;
-  color: #000000;
-  font-weight: bold;
-  cursor: pointer;
-}
+    button {
+      padding: 15px;
+      background-color: #ffffff;
+      border: none;
+      color: #000000;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
     footer {
       padding: 30px;
@@ -115,38 +131,57 @@ nav a:hover {
         display: block;
         margin: 10px 0;
       }
+
+      #marketplace {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#services">How It Works</a>
+    <a href="#marketplace">Marketplace</a>
     <a href="#testimonials">Testimonials</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <header>
-    <h1>Takara Global</h1>
-    <p>Your trusted international shopping partner—bringing products from Japan, Korea, the U.S., and beyond straight to your doorstep.</p>
+    <h1>Welcome to Takara Global</h1>
+    <p>We help you purchase exclusive products from Japan, Korea, the U.S., and beyond—even if they don’t ship to your country.</p>
   </header>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>Takara Global helps you purchase items from global marketplaces that don't ship to your country. From exclusive fashion drops in Tokyo to rare collectibles in Seoul—we handle the local buying, shipping, and tracking so you don’t have to.</p>
-  </section>
+  <section id="marketplace">
+    <h2>Shop Popular Picks</h2>
+    <p>Here are some of the most requested items from our global shoppers:</p>
 
-  <section id="services">
-    <h2>How It Works</h2>
-    <p>
-      Simply tell us what you want to buy and from where. We handle the rest:
-      <br><br>
-      • We purchase the item on your behalf<br>
-      • We inspect and securely package your order<br>
-      • We ship it internationally to your location<br><br>
-      It's global shopping—made seamless, safe, and personal.
-    </p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
+
+      <!-- Product 1 -->
+      <div style="background-color: #111; padding: 20px; border: 1px solid #333;">
+        <img src="https://via.placeholder.com/250x250?text=Tokyo+Sneakers" alt="Tokyo Sneakers" style="width: 100%; margin-bottom: 15px;">
+        <h3 style="color: #fff; font-size: 20px;">Tokyo Exclusive Sneakers</h3>
+        <p style="color: #bbb;">Rare drop from Japan. Limited stock available.</p>
+        <a href="#contact"><button style="margin-top: 10px;">Request This</button></a>
+      </div>
+
+      <!-- Product 2 -->
+      <div style="background-color: #111; padding: 20px; border: 1px solid #333;">
+        <img src="https://via.placeholder.com/250x250?text=Korean+Skincare" alt="Korean Skincare" style="width: 100%; margin-bottom: 15px;">
+        <h3 style="color: #fff; font-size: 20px;">Korean Skincare Set</h3>
+        <p style="color: #bbb;">Top-selling beauty set from Seoul retailers.</p>
+        <a href="#contact"><button style="margin-top: 10px;">Request This</button></a>
+      </div>
+
+      <!-- Product 3 -->
+      <div style="background-color: #111; padding: 20px; border: 1px solid #333;">
+        <img src="https://via.placeholder.com/250x250?text=Anime+Figures" alt="Anime Figures" style="width: 100%; margin-bottom: 15px;">
+        <h3 style="color: #fff; font-size: 20px;">Anime Collectible Figures</h3>
+        <p style="color: #bbb;">Exclusive to Akihabara shops. We source it for you.</p>
+        <a href="#contact"><button style="margin-top: 10px;">Request This</button></a>
+      </div>
+
+    </div>
   </section>
 
   <section id="testimonials">
@@ -177,7 +212,6 @@ nav a:hover {
     <h2>Contact Us</h2>
     <p>Looking for something specific? Let us know and we’ll help source it for you.</p>
     
-    <!-- Replace YOUR_FORM_ENDPOINT with your Formspree link -->
     <form action="https://formspree.io/f/YOUR_FORM_ENDPOINT" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="_replyto" placeholder="Your Email" required>
