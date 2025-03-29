@@ -226,6 +226,127 @@
   </div>
 </nav>
 
+  <!-- Category Dropdown Navigation -->
+<style>
+  .dropdown-nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown > a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    display: block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #111;
+    padding: 15px 20px;
+    border-radius: 4px;
+    z-index: 999;
+    min-width: 200px;
+  }
+
+  .dropdown-content a {
+    display: block;
+    color: #ddd;
+    padding: 8px 0;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  .dropdown-content a:hover {
+    color: #fff;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .dropdown-content {
+      position: static;
+    }
+  }
+</style>
+
+<nav class="dropdown-nav">
+  <div class="dropdown">
+    <a href="#">Food & Beverage</a>
+    <div class="dropdown-content">
+      <a href="#">Snacks & Treats</a>
+      <a href="#">Pantry Essentials</a>
+      <a href="#">Drinks & Beverages</a>
+      <a href="#">Specialty Selections</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="#">Home & Tech</a>
+    <div class="dropdown-content">
+      <a href="#">Smart Home & Living</a>
+      <a href="#">Kitchen & Dining Essentials</a>
+      <a href="#">Home Décor & Accessories</a>
+      <a href="#">Stationery & Workspace</a>
+      <a href="#">Gaming & Esports</a>
+      <a href="#">Wearable & Smart Devices</a>
+      <a href="#">Audio & Visual Accessories</a>
+      <a href="#">Creative & Photography Gadgets</a>
+      <a href="#">Office & Productivity Essentials</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="#">Hobbies & Collectibles</a>
+    <div class="dropdown-content">
+      <a href="#">Anime & Manga Merchandise</a>
+      <a href="#">Models & Figures</a>
+      <a href="#">Trading Cards</a>
+      <a href="#">Limited Editions</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="#">Fashion</a>
+    <div class="dropdown-content">
+      <a href="#">Clothing</a>
+      <a href="#">Footwear</a>
+      <a href="#">Bags & Travel</a>
+      <a href="#">Jewelry</a>
+      <a href="#">Watches</a>
+      <a href="#">Fashion Accessories</a>
+      <a href="#">Traditional Wear</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="#">Beauty & Personal Care</a>
+    <div class="dropdown-content">
+      <a href="#">Skincare</a>
+      <a href="#">Makeup</a>
+      <a href="#">Haircare</a>
+      <a href="#">Health & Supplements</a>
+      <a href="#">Bath & Body</a>
+      <a href="#">Men’s Grooming</a>
+      <a href="#">Wellness Essentials</a>
+    </div>
+  </div>
+</nav>
 
   <!-- Tagline -->
   <section>
